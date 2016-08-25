@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Online EDA</title>
-<script src="https://d3js.org/d3-path.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="d3script.js"></script>
 <link rel="stylesheet" type="text/css" href="canvas_styling.css">
@@ -13,19 +13,21 @@
 <body>
 <div id= "sidebar"> 
 
-<select>
+<select id="mysel">
   <option value="volvo">IC-8pin</option>
   <option value="saab">Resistor</option>
   <option value="opel">Capacitor</option>
   <option value="audi">IC-16pin</option>
 </select>
-<input type="button" value="Add">
+<input id="mybut" type="button" value="Add">
 
 
 </div>
 
 
 <svg> 
+<object data="/parts/IC-8pin.svg" type="image/svg+xml"> </object>
+
 
 </svg>
 </body>
