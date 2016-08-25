@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<svg width="160" height="250" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<svg width="160" height="215" version="1.1" xmlns="http://www.w3.org/2000/svg">
  
 <rect x="30" y="0" width="100" height="215" stroke="black" fill="yellow" stroke-width="2"/>
 
@@ -39,5 +39,7 @@
 <text x="110" y="155">11</text>
 <text x="110" y="185">10</text>
 <text x="110" y="212">9</text>
+<text x="45" y="75">IC 16pin</text>
+
  
 </svg>
