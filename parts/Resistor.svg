@@ -1,0 +1,13 @@
+
+<?xml version="1.0" standalone="no"?>
+<svg width="120" height="18" version="1.1" xmlns="http://www.w3.org/2000/svg">
+ 
+<rect x="30" y="0" width="60" height="18" stroke="black" fill="yellow" stroke-width="2"/>
+
+<line x1="0" x2="30" y1="9" y2="9"   stroke="black" fill="black" stroke-width="2"/>
+<line x1="90" x2="120" y1="9" y2="9"   stroke="black" fill="black" stroke-width="2"/>
+
+<text x="45" y="15">1K</text>  
+  
+
+</svg>
