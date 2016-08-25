@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/* CSS Document */
+#sidebar
+{
+width: 250px;
+height: 600px;
+border:solid;
+border-color:black;
+float:right;
+
+}
+
+select{
+	padding:10px;
+}
