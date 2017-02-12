@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.block{
+	display:inline-block;
+	border:solid 1px;
+	border-color: black;
+	float:left;
+	
+	
+}
+
+#sidebar{
+	
+width: 200px;
+height: 900px;	
+
+}
+
+
