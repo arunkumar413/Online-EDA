@@ -1,58 +1,61 @@
 <?xml version="1.0" standalone="no"?>
   <g>
 
-<svg class ="part" width="163" height="85" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<svg class ="part" width="210" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
  
-<rect x="30" y="0" width="100" height="85" stroke="black" fill="yellow" stroke-width="2"/>
+<rect x="30" y="0" width="150" height="100" stroke="black" fill="yellow" stroke-width="2"/>
+
+<text id="IC" x="90" y="50">IC</text>  
 
   
 <g class ="g_pin1">
-<line id ="pin1" class = "pin" x1="3" x2="30" y1="18" y2="18" stroke="black" fill="black" stroke-width="2"/> 
-<line id ="pin1cp" class = "cp" x1="0" x2="3" y1="18" y2="18" stroke="red" fill="red" stroke-width="2"/>
+<line id ="pin1" class = "pin" x1="10" x2="30" y1="20" y2="20" />
+<rect id ="pin1cp" class ="cp" x="0" y="15" />  
 <text x="32" y="20">1 </text>
 </g> 
   
 
 <g class ="g_pin2">
-<line id ="pin2" class ="pin" x1="3" x2="30" y1="36" y2="36" stroke="black" fill="black" stroke-width="2"/>  
-<line id ="pin2cp" class ="cp" x1="0" x2="3" y1="36" y2="36" stroke="red" fill="red" stroke-width="2"/>
-<text x="32" y="38">2</text>
+<line id ="pin2" class ="pin" x1="10" x2="30" y1="40" y2="40" />  
+<rect id ="pin2cp" class ="cp" x="0" y="35"/>
+<text x="32" y="42">2 </text>
 </g>
   
 <g class ="g_pin3">
-<line id = "pin3" class="pin" x1="3" x2="30" y1="54" y2="54" stroke="black" fill="black" stroke-width="2"/>
-<line id="pin3cp" class = "cp" x1="0" x2="3" y1="54" y2="54" stroke="red" fill="red" stroke-width="2"/>
- <text x="32" y="58">3</text> 
+<line id = "pin3" class="pin" x1="10" x2="30" y1="60" y2="60" />
+<rect id ="pin3cp" class ="cp" x="0" y="55" />  
+ <text x="32" y="62">3 </text> 
 </g>
   
 <g class ="g_pin4">
-<line id  ="pin4" class ="pin" x1="3" x2="30" y1="72" y2="72" stroke="black" fill="black" stroke-width="2"/>
-<line id ="pin4cp" class ="cp" x1="0" x2="3" y1="72" y2="72" stroke="red" fill="red" stroke-width="2"/>
-<text x="32" y="75">4</text>
+<line id  ="pin4" class ="pin" x1="10" x2="30" y1="80" y2="80" />
+<rect id ="pin4cp" class ="cp" x="0" y="75" />  
+<text x="32" y="82">4  </text>
 </g>
  
 <g class = "g_pin5">
-<line id="pin5" class ="pin" x1="130" x2="160" y1="72" y2="72" stroke="black" fill="black" stroke-width="2"/>
-<line id ="pin5cp" class="cp" x1="160" x2="163" y1="72" y2="72" stroke="red" fill="red" stroke-width="2"/>
-<text x="120" y="75">5</text> 
+<line id="pin5" class ="pin" x1="180" x2="200" y1="80" y2="80" />
+<rect id ="pin5cp" class ="cp" x="200" y="75" />  
+<text x="167" y="84">5 </text> 
 </g>
   
 <g class = "g_pin6">
-<line id = "pin6" class ="pin" x1="130" x2="160" y1="54" y2="54" stroke="black" fill="black" stroke-width="2"/>
-<line id  ="pin6cp" class="cp" x1="160" x2="163" y1="54" y2="54" stroke="red" fill="red" stroke-width="2"/>
-<text x="120" y="58">6</text>  
+<line id = "pin6" class ="pin" x1="180" x2="200" y1="60" y2="60" />
+<rect id ="pin6cp" class ="cp" x="200" y="55"/>  
+<text x="167" y="62">6</text>  
 </g>
   
 <g class = "g_pin7">
-<line id ="pin7" class ="pin" x1="130" x2="160" y1="36" y2="36" stroke="black" fill="black" stroke-width="2"/>
-<line id  ="pin7cp" class="cp" x1="160" x2="163" y1="36" y2="36" stroke="red" fill="red" stroke-width="2"/>
-<text x="120" y="40">7</text>
+<line id ="pin7" class ="pin" x1="180" x2="200" y1="40" y2="40" />
+<rect id ="pin7cp" class ="cp" x="200" y="35" />  
+<text x="167" y="44">7</text>
 </g>
 
 <g class = "g_pin8">
-<line id= "pin8" class ="pin" x1="130" x2="160" y1="18" y2="18" stroke="black" fill="black" stroke-width="2"/>
-<line id  ="pin8cp" class="cp" x1="160" x2="163" y1="18" y2="18" stroke="red" fill="red" stroke-width="2"/>
-<text x="120" y="20">8</text>  
+<line id= "pin8" class ="pin" x1="180" x2="200" y1="20" y2="20" />
+<rect id ="pin8cp" class ="cp" x="200" y="15"/>  
+<text x="168" y="20">8</text>  
 </g>
+
 </svg>
 </g>

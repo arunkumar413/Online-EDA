@@ -15,15 +15,20 @@ height: 900px;
 
 
 .cp{
-  fill: blue;
   width: 10px;
     height: 10px;
-    stroke:black;
+    stroke:white;
   stroke-width: 1px;
+	fill:none;
 }
 
 .pin{
   stroke:black; 
   fill:black; 
-  stroke-width: 2 px;
+  stroke-width: 2px;
+}
+
+.cp:hover{
+	  fill: blue;
+
 }
