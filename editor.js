@@ -198,132 +198,70 @@ function add_wire()
 	
 function clickHandler(ev, x, y)
 	{
-	 l++;
-						if (chk_clk==false){
-		        pt = s.node.createSVGPoint();
+	 l++;  //increment the click counter
+	          pt = s.node.createSVGPoint();
   					pt.x = x; 
 						pt.y = y;
 						pt = pt.matrixTransform( s.node.getScreenCTM().inverse());
 					  clickx= pt.x;
-					  clicky=pt.y;
-						all_cons.push([clickx, clicky,0]); //0 indicates normal click
+					  clicky=pt.y;	
+						
+		        if (l==1 && chk_clk==false){
+						w=w+1;  //increment wire counter
+						wires[w]=s.path("M"+clickx+","+clicky);	//create a new wire
+						all_cons.push([]); //add new connection
+            console.log(all_cons);
+            console.log(all_cons.length);
+							
+            all_cons[(all_cons.length)-1].push([wire[w]]); // add new wire to all_cons 
+            all_cons[(all_cons.length)-1].push([clickx,clicky, 0, null]);	// add click points to all_cons
+		
 						}
 					  
-						else if (chk_clk==true){
+						else if (l==1 && chk_clk==true){
 						clickx = final_x; 
 			      clicky =final_y;
-					  all_cons.push([clickx, clicky,1,clicked_part]);  // 1 indicates click on connection point
-	
+            w=w+1;
+						wires[w]=s.path("M"+clickx+","+clicky);	
+						all_cons.push([]);
+            console.log(all_cons);
+            console.log(all_cons.length);
+							
+            all_cons[(all_cons.length)-1].push([wire[w]]);
+            all_cons[(all_cons.length)-1].push([clickx,clicky, 1, clicked_part]);	
 						}
 					
-					if (l==1){
-					  console.log(w);
-					  w=w+1;
-						r=r+1;
-					  wires[w] =s.path(["M" +clickx+ ","+ clicky]);
-						var temp = wires[w].attr("d");
-						console.log(temp)
-						t[r] = window.svgPathParser(temp);
-						
-						if  (chk_clk==true){
-						t[r][0].cp_clk= 1;
-						t[r][0].cp_id=clicked_part;
-						}
-						
-						else if (chk_clk==false){
-							
-						t[r][0].cp_clk= 0;
-							
-						}
-						console.log(temp);
-						console.log(t[r]);
-
-						if (chk_clk==false){
-						 t[r].push({ code: "H", command: "horizontal lineto",x:clickx,cp_clk:0});
-             t[r].push({ code: "V", command: "vertical lineto",y:clicky,cp_clk:0});
-						} //end of if
-						
-						else if (chk_clk==true){
-						 t[r].push({ code: "H", command: "horizontal lineto",x:clickx,cp_clk:1,cp_id:clicked_part});
-             t[r].push({ code: "V", command: "vertical lineto",  y:clicky,cp_clk:1,cp_id:clicked_part});
-						} //end of else if
-  					
-						len = t[r].length;
- 			 			m = '';
-					  wires[w].attr({stroke: "#0000FF", fill: "none", strokeWidth: 2});
-
-					  s.mousemove(mouse_mover);
 					  
-					} //end of if
  				
-					else if (l>1)
-					     {
-						   	len =t[r].length;
-								t[r][len-2].x =clickx;
-								t[r][len-1].y = clicky;
+					else if (l>1 && chk_clk==false){
+						   all_cons[(all_cons.length)-1].push([clickx,clicky, 0, null]);
+						   m = wires[w].attr("d");
+						   console.log(m);
+						   m=m+"H"+clickx+"V"+clicky;
+						   wires[w].attr({"d":m});
+						   wires[w].attr({fill:"none",strokeWidth:2,stroke:"blue"});
 
-								for (i=0; i<len;i++){
-									 if (t[r][i].x!=undefined && t[r][i].y!=undefined){
 
-									m =m+ t[r][i].code + (t[r][i].x) + "," + (t[r][i].y) + " ";
 								}                                                    
-								else if (t[r][i].x==undefined && t[r][i].y!=undefined){
-								m=m +  t[r][i].code +  t[r][i].y + " ";
+					else if (l>1 && chk_clk==true){
+						       clickx = final_x; 
+			             clicky =final_y;
+							     all_cons[(all_cons.length)-1].push([clickx,clicky, 0, clicked_part]);
+						       m = wires[w].attr("d");
+						       m=m+"H"+clickx+"V"+clicky;
+						       wires[w].attr({"d":m});
+						       wires[w].attr({fill:"none",strokeWidth:2,stroke:"blue"});
 								}
-								else if (t[r][i].y==undefined && t[r][i].x!=undefined){
-								m= m+ t[r][i].code + t[r][i].x + " ";
-  							}
-  							} //end of for  
-								 wires[w].attr({"d":m});
-								 if(chk_clk==false){
-								 t[r].push({ code: "H", command: "horizontal lineto",x:clickx });
-                 t[r].push({ code: "V", command: "vertical lineto",y:clicky});
-								 }
-								 
-								 if (chk_clk==true){
-								 t[r].push({ code: "H", command: "horizontal lineto",x:clickx,cp_clk:1,cp_id:clicked_part});
-                 t[r].push({ code: "V", command: "vertical lineto",y:clicky,  cp_clk:1,cp_id:clicked_part});
-								 }
-  								len = t[r].length;
-  								 m ='';
-
+		console.log(all_cons);
 					  		s.mousemove(mouse_mover);
-					     } //end of else if
+					      //end of else if
 	
 } //end of click handler 
 		
 	function mouse_mover(ev, x, y)
 {
 							  
-					var m_pt = s.node.createSVGPoint();
-  					m_pt.x = x; 
-					m_pt.y = y;	 
-					m_pt = m_pt.matrixTransform( s.node.getScreenCTM().inverse());
-					var  movex= m_pt.x ;
-					var movey= m_pt.y ; 
-							t[r][len-2].x =movex;
-							t[r][len-1].y = movey;
-
-							for (i=0; i<len;i++){
-							if (t[r][i].x!=undefined && t[r][i].y!=undefined){
-
-							 m =m+ t[r][i].code + (t[r][i].x) + "," + (t[r][i].y) + " ";
-	
-							}                                                    
-							else if (t[r][i].x==undefined && t[r][i].y!=undefined){
-							m=m +  t[r][i].code +  t[r][i].y + " ";
-	
-							}
-							else if (t[r][i].y==undefined && t[r][i].x!=undefined){
-							m= m+ t[r][i].code + t[r][i].x + " ";
-							
-
-	
-							}
-								
-							}
-								wires[w].attr({"d":m}) ;
-								m='';
+					
 	              chk_clk=false;
 }  //end of mouse_over	
 		
