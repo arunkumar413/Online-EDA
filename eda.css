@@ -5,12 +5,13 @@
        display:inline-block;
 	border:solid 1px;
 	border-color: black;
-	float:left;	
+	float:left;
+	
 }
-
 #sidebar{
 width: 200px;
-height: 900px;
+height: 1500px;
+	float:left;
 }
 
 
@@ -28,7 +29,7 @@ height: 900px;
   stroke-width: 2px;
 }
 
-.cp:hover{
+.cp{
 	  fill: blue;
 
 }
