@@ -25,7 +25,6 @@ var chk_clk = false;
 z = -1;
 var r = -1; //index of t
 var clicked_part;
-
 var drag_par_x;
 var drag_par_y;
 var bb_cli_x;
@@ -46,17 +45,16 @@ for (var i = 0; i < 900; i++) {
 
 
 $(document).ready(function() {
-	easystar = new EasyStar.js();
-	easystar.setGrid(grid);
-	easystar.setAcceptableTiles([0]);
+	easystar = new EasyStar.js();  // create new easystar instance.
+	easystar.setGrid(grid);  //set the grid
+	easystar.setAcceptableTiles([0]);  // set the accetable points as path points. 
 
 	$("#mybut").click(add_part);
 	$("#wire").click(add_wire);
 	//$("#remove").click(remove_part);
 	$("#move").click(move);
-	s = Snap("#mycanvas");
-
-
+	
+	s = Snap("#mycanvas");  // create a new canvas
 	function add_part() {
 		var selection = document.getElementById("mysel");
 		var selection2 = selection.options[selection.selectedIndex].text;
@@ -70,9 +68,6 @@ $(document).ready(function() {
 				var resp1 = resp.replace("<svg", "<svg id = p" + partcount); //after reading the file make the part_id unique
 				var resp2 = resp1.replace("<g>", "<g id=g" + partcount + ">"); // after reading the file make the group_id unique
 				document.getElementById("mycanvas").innerHTML += resp2; // append the part to the DOM
-
-
-
 
 				part = s.select("#p" + partcount); //select the part
 				part_id = part.attr("id"); //get the part id
@@ -126,7 +121,6 @@ $(document).ready(function() {
 		drag_par_y = this.attr("transform").globalMatrix.f; //transformed y
 		set_walls(drag_par_x - 5, drag_par_x + box.width + 5, drag_par_y - 5, drag_par_y + box.height + 5); //update obstacle();	
 
-
 		bb = this.selectAll(".cp");
 		for (mm = 0; mm < bb.length; mm++) {
 			pin_id = bb[mm].attr("id");
@@ -158,18 +152,12 @@ $(document).ready(function() {
 
 		} //end of for
 
-
-
-
 	} // end of drag handlers
-
-
 
 	function drag_part() {
 		for (var k = 1; k <= partcount; k++) {
 			s.select("#g" + k).drag(drag_move, start, drag_stop);
 		}
-
 
 	} //end of drag part
 
@@ -177,12 +165,10 @@ $(document).ready(function() {
 		for (var k = 1; k <= partcount; k++) {
 			s.select("#g" + String(k)).undrag;
 		}
-
 		c_points = s.selectAll(".cp");
 		for (var k = 0; k < c_points.length; k++) {
 			c_points[k].click(clicked);
 		}
-
 
 		function clicked() {
 			clicked_part = this.attr("id");
@@ -204,7 +190,6 @@ $(document).ready(function() {
 	} //end of add_wire
 
 	function clickHandler(ev, x, y) {
-
 		l++; //increment the click counter
 		//pt = s.node.createSVGPoint();
 		//pt.x = x; 
@@ -236,10 +221,7 @@ $(document).ready(function() {
 				all_cons[all_cons.length - 1][1][1],
 				all_cons[all_cons.length - 1][2][0],
 				all_cons[all_cons.length - 1][2][1]);
-
-
 		}
-
 
 		s.mousemove(mouse_mover);
 		//end of else if
@@ -247,24 +229,17 @@ $(document).ready(function() {
 	} //end of click handler 
 
 	function mouse_mover(ev, x, y) {
-
-
 		chk_clk = false;
 	} //end of mouse_over	
 
-
 	$(document).on('keyup', function(event) {
 		if (event.keyCode == 27) {
-
 			s.unmousemove(mouse_mover);
 			s.unclick(clickHandler);
 			l = 0;
 			alert(wires);
-
 		}
 	}); //end of key up
-
-
 
 	function find_path(p, q, r, s) {
 		easystar.findPath(p, q, r, s, function(path) {
@@ -280,6 +255,7 @@ $(document).ready(function() {
 
 			}
 		});
+		
 		easystar.calculate();
 
 	} //end of find_path
@@ -288,13 +264,10 @@ $(document).ready(function() {
 		for (var k = x; k < x2; k++) {
 			for (var j = y; j < y2; j++) {
 				grid[k][j] = 1;
-
 			}
 		}
 
 	} ///end o
-
-
 
 
 
