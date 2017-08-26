@@ -123,16 +123,15 @@ $(document).ready(function() {
 
 		bb = this.selectAll(".cp");
 		for (mm = 0; mm < bb.length; mm++) {
+			for (var i = 0; i < all_cons.length; i++) {
+				for (var j = 0; j < all_cons[i].length; j++) {
+					for (var k = 0; k < all_cons[i][j].length; k++) {
 			pin_id = bb[mm].attr("id");
 			bb_cli_x = Number(bb[mm].attr("x")); //x value of the clicked pin
 			bb_cli_y = Number(bb[mm].attr("y")); //x value of the clicked pin
 
 			bb_final_x = bb_cli_x + 5 + drag_par_x; //exact x position of the pin center
 			bb_final_y = bb_cli_y + 5 + drag_par_y; //exact y position of the pin center
-
-			for (var i = 0; i < all_cons.length; i++) {
-				for (var j = 0; j < all_cons[i].length; j++) {
-					for (var k = 0; k < all_cons[i][j].length; k++) {
 						if (all_cons[i][j][k] == pin_id) {
 							console.log("final x" + bb_final_x)
 							console.log("final y" + bb_final_y)
@@ -155,7 +154,7 @@ $(document).ready(function() {
 	} // end of drag handlers
 
 	function drag_part() {
-		for (var k = 1; k <= partcount; k++) {
+		for (let k = 1; k <= partcount; k++) {
 			s.select("#g" + k).drag(drag_move, start, drag_stop);
 		}
 
@@ -163,10 +162,12 @@ $(document).ready(function() {
 
 	function add_wire() {
 		for (var k = 1; k <= partcount; k++) {
-			s.select("#g" + String(k)).undrag;
+			
+			s.select("#g" + k).undrag(); //make parts undraggable
 		}
+		$('html,body').css('cursor','crosshair');
 		c_points = s.selectAll(".cp");
-		for (var k = 0; k < c_points.length; k++) {
+		for (let k = 0; k < c_points.length; k++) {
 			c_points[k].click(clicked);
 		}
 
@@ -238,6 +239,9 @@ $(document).ready(function() {
 			s.unclick(clickHandler);
 			l = 0;
 			alert(wires);
+			$('html,body').css('cursor','default');
+			drag_part();
+			
 		}
 	}); //end of key up
 
@@ -269,6 +273,11 @@ $(document).ready(function() {
 
 	} ///end o
 
+	function move(){
+		for (k=1;k<=partcount;k++){
+			s.select("#g" + k).drag(drag_move, start, drag_stop);
+		}
+	}
 
 
 }); //final end
