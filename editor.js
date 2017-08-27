@@ -45,9 +45,9 @@ for (var i = 0; i < 900; i++) {
 
 
 $(document).ready(function() {
-	easystar = new EasyStar.js();  // create new easystar instance.
-	easystar.setGrid(grid);  //set the grid
-	easystar.setAcceptableTiles([0]);  // set the accetable points as path points. 
+	easystar = new EasyStar.js(); // create new easystar instance.
+	easystar.setGrid(grid); //set the grid
+	easystar.setAcceptableTiles([0]); // set the accetable points as path points. 
 
 	$("#mybut").click(add_part);
 	$("#wire").click(add_wire);
@@ -56,8 +56,8 @@ $(document).ready(function() {
 	//$("#zoom").click(zoom_inc);
 	//$("#zoom").click(zoom_dec);
 
-	
-	s = Snap("#mycanvas");  // create a new canvas
+
+	s = Snap("#mycanvas"); // create a new canvas
 	function add_part() {
 		var selection = document.getElementById("mysel");
 		var selection2 = selection.options[selection.selectedIndex].text;
@@ -71,9 +71,9 @@ $(document).ready(function() {
 				var resp1 = resp.replace("<svg", "<svg id = p" + partcount); //after reading the file make the part_id unique
 				var resp2 = resp1.replace("<g>", "<g id=g" + partcount + ">"); // after reading the file make the group_id unique
 				document.getElementById("mycanvas").innerHTML += resp2; // append the part to the DOM
-        
-				
-				s.select("#g"+partcount).addClass("part_g");
+
+
+				s.select("#g" + partcount).addClass("part_g");
 				part = s.select("#p" + partcount); //select the part
 				part_id = part.attr("id"); //get the part id
 				console.log(part_id);
@@ -131,12 +131,12 @@ $(document).ready(function() {
 			for (var i = 0; i < all_cons.length; i++) {
 				for (var j = 0; j < all_cons[i].length; j++) {
 					for (var k = 0; k < all_cons[i][j].length; k++) {
-			pin_id = bb[mm].attr("id");
-			bb_cli_x = Number(bb[mm].attr("x")); //x value of the clicked pin
-			bb_cli_y = Number(bb[mm].attr("y")); //x value of the clicked pin
+						pin_id = bb[mm].attr("id");
+						bb_cli_x = Number(bb[mm].attr("x")); //x value of the clicked pin
+						bb_cli_y = Number(bb[mm].attr("y")); //x value of the clicked pin
 
-			bb_final_x = bb_cli_x + 5 + drag_par_x; //exact x position of the pin center
-			bb_final_y = bb_cli_y + 5 + drag_par_y; //exact y position of the pin center
+						bb_final_x = bb_cli_x + 5 + drag_par_x; //exact x position of the pin center
+						bb_final_y = bb_cli_y + 5 + drag_par_y; //exact y position of the pin center
 						if (all_cons[i][j][k] == pin_id) {
 							console.log("final x" + bb_final_x)
 							console.log("final y" + bb_final_y)
@@ -167,10 +167,10 @@ $(document).ready(function() {
 
 	function add_wire() {
 		for (var k = 1; k <= partcount; k++) {
-			
+
 			s.select("#g" + k).undrag(); //make parts undraggable
 		}
-		$('html,body').css('cursor','crosshair'); //change mouse pointer style to indicate drawing wire
+		$('html,body').css('cursor', 'crosshair'); //change mouse pointer style to indicate drawing wire
 		c_points = s.selectAll(".cp");
 		for (let k = 0; k < c_points.length; k++) {
 			c_points[k].click(clicked);
@@ -238,15 +238,15 @@ $(document).ready(function() {
 		chk_clk = false;
 	} //end of mouse_over	
 
-	$(document).on('keyup', function(event) {  //function execuites on pressing esc key.
+	$(document).on('keyup', function(event) { //function execuites on pressing esc key.
 		if (event.keyCode == 27) {
 			s.unmousemove(mouse_mover);
 			s.unclick(clickHandler);
 			l = 0;
 			alert(wires);
-			$('html,body').css('cursor','default');
+			$('html,body').css('cursor', 'default');
 			drag_part();
-			
+
 		}
 	}); //end of key up
 
@@ -264,7 +264,7 @@ $(document).ready(function() {
 
 			}
 		});
-		
+
 		easystar.calculate();
 
 	} //end of find_path
@@ -278,24 +278,24 @@ $(document).ready(function() {
 
 	} ///end o
 
-	function move(){
-		for (k=1;k<=partcount;k++){
+	function move() {
+		for (k = 1; k <= partcount; k++) {
 			s.select("#g" + k).drag(drag_move, start, drag_stop);
 		}
 	}
-	
-	function remove_part(){
-		$('html,body').css('cursor','not-allowed');
-			var x = s.selectAll(".part_g");
-				for (var i=0;i<x.length; i++){
-					console.log(x[i]);
-			    x[i].click(rem);
-			}
-			
-			function rem(){
-				     this.remove();
+
+	function remove_part() {
+		$('html,body').css('cursor', 'not-allowed');
+		var x = s.selectAll(".part_g");
+		for (var i = 0; i < x.length; i++) {
+			console.log(x[i]);
+			x[i].click(rem);
 		}
-		
+
+		function rem() {
+			this.remove();
+		}
+
 	} //end of remove part
 
 
