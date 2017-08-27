@@ -51,8 +51,11 @@ $(document).ready(function() {
 
 	$("#mybut").click(add_part);
 	$("#wire").click(add_wire);
-	//$("#remove").click(remove_part);
+	$("#remove").click(remove_part);
 	$("#move").click(move);
+	//$("#zoom").click(zoom_inc);
+	//$("#zoom").click(zoom_dec);
+
 	
 	s = Snap("#mycanvas");  // create a new canvas
 	function add_part() {
@@ -68,7 +71,9 @@ $(document).ready(function() {
 				var resp1 = resp.replace("<svg", "<svg id = p" + partcount); //after reading the file make the part_id unique
 				var resp2 = resp1.replace("<g>", "<g id=g" + partcount + ">"); // after reading the file make the group_id unique
 				document.getElementById("mycanvas").innerHTML += resp2; // append the part to the DOM
-
+        
+				
+				s.select("#g"+partcount).addClass("part_g");
 				part = s.select("#p" + partcount); //select the part
 				part_id = part.attr("id"); //get the part id
 				console.log(part_id);
@@ -165,7 +170,7 @@ $(document).ready(function() {
 			
 			s.select("#g" + k).undrag(); //make parts undraggable
 		}
-		$('html,body').css('cursor','crosshair');
+		$('html,body').css('cursor','crosshair'); //change mouse pointer style to indicate drawing wire
 		c_points = s.selectAll(".cp");
 		for (let k = 0; k < c_points.length; k++) {
 			c_points[k].click(clicked);
@@ -233,7 +238,7 @@ $(document).ready(function() {
 		chk_clk = false;
 	} //end of mouse_over	
 
-	$(document).on('keyup', function(event) {
+	$(document).on('keyup', function(event) {  //function execuites on pressing esc key.
 		if (event.keyCode == 27) {
 			s.unmousemove(mouse_mover);
 			s.unclick(clickHandler);
@@ -278,6 +283,20 @@ $(document).ready(function() {
 			s.select("#g" + k).drag(drag_move, start, drag_stop);
 		}
 	}
+	
+	function remove_part(){
+		$('html,body').css('cursor','not-allowed');
+			var x = s.selectAll(".part_g");
+				for (var i=0;i<x.length; i++){
+					console.log(x[i]);
+			    x[i].click(rem);
+			}
+			
+			function rem(){
+				     this.remove();
+		}
+		
+	} //end of remove part
 
 
 }); //final end
