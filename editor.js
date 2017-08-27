@@ -159,8 +159,10 @@ $(document).ready(function() {
 	} // end of drag handlers
 
 	function drag_part() {
-		for (let k = 1; k <= partcount; k++) {
-			s.select("#g" + k).drag(drag_move, start, drag_stop);
+		var x = s.selectAll(".part_g");
+		for (let k = 0; k < x.length; k++) {
+			x[k].drag(drag_move, start, drag_stop);
+
 		}
 
 	} //end of drag part
@@ -294,6 +296,7 @@ $(document).ready(function() {
 
 		function rem() {
 			this.remove();
+
 		}
 
 	} //end of remove part
