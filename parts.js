@@ -1,6 +1,6 @@
 var parts = {
     
-    IC8pin:function IC8pin() {
+    IC8pin:function () {
     this.manufactuerer = "";
     this.name = "";
     this.part_num = 
@@ -11,7 +11,7 @@ var parts = {
         {num:1,name: "Vcc",x:10,y:5},
         
         
-        };
+        };  //end of pins
 
  this.outer = s.path("M0 0 h160 v100 h-160 Z").attr({fill: "none", strokeWidth: 1});
  this.rec = s.rect(30,0,100,100).attr({fill:"yellow",stroke:"black"});
@@ -45,9 +45,9 @@ this.line6 = s.path("M130 65 h20").attr({stroke: "black",strokeWidth:1});
 this.line7 = s.path("M130 35 h20").attr({stroke: "black",strokeWidth:1});
 this.line8 = s.path("M130 5 h20").attr({stroke: "black",strokeWidth:1});
 
-this.grp = s.group(this.rec, this.outer, this.ICname, 
+this.grp = s.group(this.outer,this.rec,this.ICname,
              this.text1, this.text2, this.text3, this.text4, this.text5, this.text6, this.text7, this.text8,
-             this.pin1, this.pin2, this.pin3, this.thipin4, this.pin5, this.pin6, this.pin7, this.pin8,
+             this.pin1, this.pin2, this.pin3, this.pin4, this.pin5, this.pin6, this.pin7, this.pin8,
              this.line1,this.line2, this.line3, this.line4, this.line5,this.line6,this.line7, this.line8);
              return(this.grp);
              
@@ -72,7 +72,7 @@ this.line2 = s.path("M90 9 h20").attr({stroke: "black",strokeWidth:1});
 this.grp = s.group(this.outer,this.rec,this.ICname, this.pin1, this.pin2,this.line1,this.line2);
 return(this.grp);             
              
-         }, //end of resistor
+         } //end of resistor
 };
              
              
