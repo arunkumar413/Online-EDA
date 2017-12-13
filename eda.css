@@ -1,6 +1,4 @@
-@charset "UTF-8";
-/* CSS Document */
-
+@CHARSET "UTF-8";
 .block{
        display:inline-block;
 	border:solid 1px;
@@ -8,6 +6,7 @@
 	float:left;
 	
 }
+
 #sidebar{
 width: 200px;
 height: 1500px;
