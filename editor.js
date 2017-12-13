@@ -1,7 +1,6 @@
 $(document).ready(function() {
-	s = Snap("#mycanvas");
-    components = [];   // holds all the parts added on the canvas
-
+ s = Snap("#mycanvas");
+ components = [];   // holds all the parts added on the canvas
 
 	$("#mybut").click(add_part);
 	$("#wire").click(add_wire);
@@ -48,15 +47,15 @@ $(document).ready(function() {
 	} //end of add_wire
 
 	function make_drag(drag_move,drag_start,drag_stop){
-	    for (i=0;i<components.length;i++){
-	        components[i].drag()
+	    for (var i=0;i<components.length;i++){
+	        components[i].drag();;
 	    } //end of make_drag
     }
 
 
 function remove_part(){
     		$('html,body').css('cursor', 'not-allowed');
-    		for (i=0;i<components.length;i++){
+    		for (var i=0;i<components.length;i++){
 	        components[i].click(rem);
 	    } //en
 	        
