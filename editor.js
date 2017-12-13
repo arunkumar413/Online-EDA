@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	s = Snap("#mycanvas");
-    components = [];
-    var recent;
+    components = [];   // holds all the parts added on the canvas
+
 
 	$("#mybut").click(add_part);
 	$("#wire").click(add_wire);
@@ -17,9 +17,8 @@ $(document).ready(function() {
 		var selection2 = selection.options[selection.selectedIndex].text;
         var temp=parts[selection2]();
        console.log(temp);
-       components.push(temp);
-       recent = components.length-1
-       components[recent].drag();
+       components.push(temp); // add the part in to the array
+       make_drag();
 		
 
 	} //end of add_part
@@ -32,25 +31,29 @@ $(document).ready(function() {
 		});
 	}
 
-	var start = function() {
+	var drag_start = function() {
 		this.data('origTransform', this.transform().local);
 	}
 
 	var drag_stop = function() {
-		
+	    console.log("finished dragging");
+	    //drag_par_x = this.attr("transform").globalMatrix.e; //transformed x
+		//drag_par_y = this.attr("transform").globalMatrix.f; //transformed y
 	} // end of drag handlers
 
-	function drag_part() {
-
-	} //end of drag part
+	
 
 	function add_wire() {
-		
-		
 
 	} //end of add_wire
 
-	
+	function make_drag(drag_move,drag_start,drag_stop){
+	    
+	    for (i=0;i<components.length;i++){
+	        components[i].drag()
+	    } //end of make_drag
+    }
+
 
 
 }); //final end
