@@ -48,12 +48,25 @@ $(document).ready(function() {
 	} //end of add_wire
 
 	function make_drag(drag_move,drag_start,drag_stop){
-	    
 	    for (i=0;i<components.length;i++){
 	        components[i].drag()
 	    } //end of make_drag
     }
 
+
+function remove_part(){
+    		$('html,body').css('cursor', 'not-allowed');
+    		for (i=0;i<components.length;i++){
+	        components[i].click(rem);
+	    } //en
+	        
+}
+
+function rem(){
+    this.remove();
+    $('html,body').css('cursor', 'default');
+
+}
 
 
 }); //final end
