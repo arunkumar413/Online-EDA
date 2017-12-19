@@ -10,6 +10,7 @@ $(document).ready(function() {
 	$("#move").click(make_drag);
 	//$("#zoom").click(zoom_inc);
 	//$("#zoom").click(zoom_dec);
+	$("#rotate").click(rotate);
 
 
 
@@ -68,6 +69,19 @@ function rem(){
     this.remove();  // remove the clicked part
     $('html,body').css('cursor', 'default');
 
+}
+
+function rotate(){
+groups.forEach(function(el,k){
+	        groups[k].click(rotate_this);
+})
+            
+	   
+}
+
+function rotate_this(){
+    
+    this.transform(this.transform()+'r90');
 }
 
 
