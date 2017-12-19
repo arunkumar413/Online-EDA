@@ -35,9 +35,8 @@ $(document).ready(function() {
 		this.data('origTransform', this.transform().local);
 	};
 
-	var drag_stop = function(i) {
+	var drag_stop = function(i,event) {
 	    console.log("finished dragging");
-	    console.log(this);
 	    console.log(i);
 	    //drag_par_x = this.attr("transform").globalMatrix.e; //transformed x
 		//drag_par_y = this.attr("transform").globalMatrix.f; //transformed y
@@ -51,7 +50,7 @@ $(document).ready(function() {
 
 	function make_drag(){
 	    for (var i=0;i<groups.length;i++){
-	        groups[i].drag(drag_move,drag_start,drag_stop,econtext=i);
+	        groups[i].drag(drag_move,drag_start,drag_stop.bind(null,i));
 	    } //end of make_drag
     }
 
