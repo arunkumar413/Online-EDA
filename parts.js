@@ -49,7 +49,6 @@ this.grp = s.group(this.outer,this.rec,this.ICname,
              this.text1, this.text2, this.text3, this.text4, this.text5, this.text6, this.text7, this.text8,
              this.pin1, this.pin2, this.pin3, this.pin4, this.pin5, this.pin6, this.pin7, this.pin8,
              this.line1,this.line2, this.line3, this.line4, this.line5,this.line6,this.line7, this.line8);
-             return(this.grp);
              
          },
 Resistor: function(){
@@ -70,7 +69,6 @@ this.pin2 = s.path("M110 4.5 h10 v10 h-10 Z").attr({fill: "blue", strokeWidth: 1
 this.line1 = s.path("M10 9 h20").attr({stroke: "black",strokeWidth: 1});
 this.line2 = s.path("M90 9 h20").attr({stroke: "black",strokeWidth:1});
 this.grp = s.group(this.outer,this.rec,this.ICname, this.pin1, this.pin2,this.line1,this.line2);
-return(this.grp);             
              
          } //end of resistor
 };
