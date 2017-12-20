@@ -13,7 +13,6 @@ $(document).ready(function() {
 	$("#rotate").click(rotate);
 
 
-
 	function add_part() {
 		var selection = document.getElementById("mysel");
 		var selection2 = selection.options[selection.selectedIndex].text;
@@ -73,15 +72,19 @@ function rem(){
 
 function rotate(){
 groups.forEach(function(el,k){
-	        groups[k].click(rotate_this);
-})
+	        el.click(rotate_this.bind(null,k));
+});
             
 	   
 }
 
-function rotate_this(){
+function rotate_this(i,event){
     
-    this.transform(this.transform()+'r90');
+    groups[i].transform(groups[i].transform()+'r90');
+    box = components[i].line1.getBBox();
+    console.log(box);
+    console.log(i);
+    
 }
 
 
