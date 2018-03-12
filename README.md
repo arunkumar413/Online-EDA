@@ -25,9 +25,9 @@ The symbols are drawn on to the DOM using snapSVG library.
 3) cd to the project directory containing the files: home.html,parts.js.editor.js etc,.
 4) If you're using python 3.x version on your machine execute this code:
    `python -m http.server`
-5) If Python version returned above is 2.X run:
+5) If Python version is 2.X run:
    `python -m SimpleHTTPServer`
-6)Visit http://localhost:8000/home.html to access the application.
+6) Visit http://localhost:8000/home.html to access the application.
 7) By default, this will run the contents of the directory on a local web server, on port 8000. 
 8) For more info on running a simple http server vist https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server
 
