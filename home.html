@@ -7,10 +7,10 @@
 <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"> </script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"> </script>
 <script src= "https://cdn.jsdelivr.net/snap.svg/0.4.1/snap.svg.js"> </script>
-<script src="editor.js">  </script>  
-<script src="easystar.js">  </script>  
-<script src="parsing.js">  </script>
+<script src="editor.js">  </script>
+<script src="parts.js">  </script>  
 <link rel="stylesheet" type="text/css" href="eda.css">
+
 
 
 </head>
@@ -22,17 +22,17 @@
 <div class ="block" id= "sidebar"> 
 
 <select id="mysel">
-  <option value="volvo">IC-8pin</option>
-  <option value="saab">Resistor</option>
-  <option value="opel">Capacitor</option>
-  <option value="audi">IC-16pin</option>
-  <option value="audi">IC-8pin_new</option>
+  <option value="IC8pin">IC8pin</option>
+  <option value="resistor">Resistor</option>
+  <option value="capacitor">Capacitor</option>
+  <option value="IC16pin">IC16pin</option>
 
 </select>
+
 <input id="mybut" type="button" value="Add">
 <input id="move" type="button" value="move">
 <input id="remove" type="button" value="Remove">
-<input id="Rotate" type="button" value="Rotate">
+<input id="rotate" type="button" value="Rotate">
 <input id="wire" type="button" value="Wire">
 
 
