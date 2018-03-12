@@ -1,10 +1,16 @@
-You have created a blank project.
-This is really a blank project! This is the only file.
+Running and testing the project:
 
-You can add files to your project:
-1. Right click on the project tree.
-2. In the Project menu.
-3. Create files on the command line. Click the "+" button in the Console panel to open a terminal window.
+1) Download the project source code from https://github.com/arunkumar413/Online-EDA.git
+2) Unzip/extract the the contents of the dowloaded zip file.
+3) cd to the project directory containing the files: home.html,parts.js.editor.js etc,.
+4) If you're using python 3.x version on your machine execute this code:
+   python -m http.server
+5) If Python version returned above is 2.X run:
+   python -m SimpleHTTPServer
+6)Visit http://localhost:8000/home.html to access the application.
+7) By default, this will run the contents of the directory on a local web server, on port 8000. 
+8) For more info on running a simple http server vist https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server
 
-You can perform install software, use the included version control tools, or run scaffolders like `rails` (if your workspace has it installed).
-You can change the project type in `Project > Configuration`.
+
+Note:  If you already have something running on port 8000, you can choose another port by running the server command followed by an alternative port number, e.g. python -m http.server 7800 (Python 3.x) or python -m SimpleHTTPServer 7800 (Python 2.x). 
+You can then access your content at localhost:7800.
