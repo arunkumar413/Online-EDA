@@ -8,14 +8,14 @@ The symbols are drawn on to the DOM using snapSVG library.
 
 1) HTML5
 2) JavaScript
-3) SnapSVG (http://andsnapsvg.io/)
+3) SnapSVG (http://snapsvg.io/)
 4) SVG
 5) CSS
 
 ##### Files:
 
 1) parts.js --- Contains the parts' object definition
-2) editors.js --- Contains utitylify functions to add the parts, move, rotate, remove and other user interactions with parts and shcematic
+2) editors.js --- Contains utility functions to add the parts, move, rotate, remove and other user interactions with parts and shcematic
 3) eda.css --- An external CSS styling file 
 
 #### Running and testing the project:
