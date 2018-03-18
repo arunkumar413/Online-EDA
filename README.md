@@ -34,3 +34,11 @@ The symbols are drawn on to the DOM using snapSVG library.
 
 Note:  If you already have something running on port 8000, you can choose another port by running the server command followed by an alternative port number, e.g. `python -m http.server 7800` (Python 3.x) or `python -m SimpleHTTPServer 7800` (Python 2.x). 
 You can then access your content at localhost:7800.
+
+
+### Contributing to the project:
+
+Contributions to the project are always welcome. You can join the gitter channel at https://gitter.im/Online-EDA/Development
+and start disucssing about the project, code, help and other stuff. Also you can raise an the issue on the github repo.
+
+
