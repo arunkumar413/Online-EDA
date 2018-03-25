@@ -1,0 +1,47 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> es8/es6
+@CHARSET "UTF-8";
+.block{
+       display:inline-block;
+	border:solid 1px;
+	border-color: black;
+	float:left;
+<<<<<<< HEAD
+
+=======
+
+>>>>>>> es8/es6
+}
+
+#sidebar{
+width: 200px;
+height: 1500px;
+	float:left;
+}
+
+
+.cp{
+  width: 10px;
+    height: 10px;
+    stroke:white;
+  stroke-width: 1px;
+	fill:none;
+}
+
+.pin{
+<<<<<<< HEAD
+  stroke:black;
+  fill:black;
+=======
+  stroke:black;
+  fill:black;
+>>>>>>> es8/es6
+  stroke-width: 2px;
+}
+
+.cp{
+	  fill: blue;
+
+}
