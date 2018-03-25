@@ -1,10 +1,25 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> es8/es6
+>>>>>>> master
 @CHARSET "UTF-8";
 .block{
        display:inline-block;
 	border:solid 1px;
 	border-color: black;
 	float:left;
+<<<<<<< HEAD
 	
+=======
+<<<<<<< HEAD
+
+=======
+
+>>>>>>> es8/es6
+>>>>>>> master
 }
 
 #sidebar{
@@ -23,8 +38,18 @@ height: 1500px;
 }
 
 .pin{
+<<<<<<< HEAD
   stroke:black; 
   fill:black; 
+=======
+<<<<<<< HEAD
+  stroke:black;
+  fill:black;
+=======
+  stroke:black;
+  fill:black;
+>>>>>>> es8/es6
+>>>>>>> master
   stroke-width: 2px;
 }
 
