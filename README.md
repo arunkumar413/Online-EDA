@@ -4,6 +4,9 @@
 The eletronic parts or schematic symbols are visualized using svg elements such as rect, path, line, circle etc,.
 The symbols are drawn on to the DOM using snapSVG library.
 
+### Demo:
+http://online-eda.surge.sh/home.html
+
 #### Technologies used:
 
 1) HTML5
