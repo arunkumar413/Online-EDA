@@ -108,8 +108,35 @@ this.pin2 = s.path("M110 4.5 h10 v10 h-10 Z").attr({fill: "blue", strokeWidth: 1
 this.line1 = s.path("M10 9 h20").attr({stroke: "black",strokeWidth: 1});
 this.line2 = s.path("M90 9 h20").attr({stroke: "black",strokeWidth:1});
 this.grp = s.group(this.outer,this.rec,this.ICname, this.pin1, this.pin2,this.line1,this.line2);
+
+this.grp.drag(this.drag_move,this.drag_start,this.drag_stop);
+this.grp.click(this.exe_command);
              
          }
+
+    drag_move(dx, dy){
+		this.attr({transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]});
+	}
+	drag_start () {
+		this.data('origTransform', this.transform().local);
+	}
+	drag_stop() {
+      console.log("finished dragging");
+      this.box=this.getBBox();
+      console.log(this.box)
+    }
+
+    exe_command(){
+        if (command== 'rem'){
+            this.remove();
+            command = ' ';
+        }
+        else if(command=='rotate'){
+     this.transform(this.transform()+'r90');
+        command = ' ';
+
+        }
+    }
          } //end of resistor
 
 
