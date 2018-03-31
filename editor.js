@@ -1,23 +1,14 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 $(document).ready(function() {
  s = Snap("#mycanvas");
 g = new Grid();
  components = [];   // holds all the parts added on the canvas
  groups = []; // parts are svg grouped for working with snapsvg
  parts = {IC8pin: IC8pin};
-=======
->>>>>>> master
 /*globals groups:true components*/
 $(document).ready(function() {
  s = Snap("#mycanvas");
  components = [];   // holds all the parts added on the canvas
  groups = []; // parts are svg grouped for working with snapsvg
-<<<<<<< HEAD
-=======
->>>>>>> es8/es6
->>>>>>> master
 
 	$("#mybut").click(add_part);
 	$("#wire").click(add_wire);
@@ -34,28 +25,12 @@ $(document).ready(function() {
         var temp= new parts[selection2]();
        components.push(temp);
        groups.push(temp.grp);// add the part in to the array
-<<<<<<< HEAD
-		
-=======
-<<<<<<< HEAD
 
-=======
-
->>>>>>> es8/es6
->>>>>>> master
 
 	} //end of add_part
 
 
-<<<<<<< HEAD
-	//start of drag handlers	
-=======
-<<<<<<< HEAD
-	//start of drag handlers
-=======
-	//start of drag handlers
->>>>>>> es8/es6
->>>>>>> master
+
 	var drag_move = function(dx, dy) {
 		this.attr({
 			transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
@@ -73,15 +48,6 @@ $(document).ready(function() {
 		//drag_par_y = this.attr("transform").globalMatrix.f; //transformed y
 	}; // end of drag handlers
 
-<<<<<<< HEAD
-	
-=======
-<<<<<<< HEAD
-
-=======
-
->>>>>>> es8/es6
->>>>>>> master
 
 	function add_wire() {
 
@@ -100,15 +66,7 @@ function remove_part(){
 	        groups[i].click(rem);
 	        delete components[i];
 	    } //en
-<<<<<<< HEAD
-	        
-=======
-<<<<<<< HEAD
 
-=======
-
->>>>>>> es8/es6
->>>>>>> master
 }
 
 function rem(){
@@ -121,43 +79,29 @@ function rotate(){
 groups.forEach(function(el,k){
 	        el.click(rotate_this.bind(null,k));
 });
-<<<<<<< HEAD
             
 	   
 }
 
 function rotate_this(i,event){
-    
-=======
-<<<<<<< HEAD
+
 
 
 }
 
 function rotate_this(i,event){
 
-=======
 
 
 }
 
 function rotate_this(i,event){
 
->>>>>>> es8/es6
->>>>>>> master
     groups[i].transform(groups[i].transform()+'r90');
     box = components[i].line1.getBBox();
     console.log(box);
     console.log(i);
-<<<<<<< HEAD
-    
-=======
-<<<<<<< HEAD
 
-=======
-
->>>>>>> es8/es6
->>>>>>> master
 }
 
 
