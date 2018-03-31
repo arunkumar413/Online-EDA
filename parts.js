@@ -1,11 +1,4 @@
-var parts = {
-    
-    IC8pin:function () {
-    this.manufactuerer = "";
-    this.name = "";
-    this.part_num = 
-
-class IC8pin{
+ class IC8pin{
     constructor(){
     this.manufactuerer = "";
     this.name = "NE555";
@@ -23,31 +16,10 @@ class IC8pin{
         this.p8= {num:8,name: "Vcc",x:150,y:0};
 
         this.box= 0;  // Holds the bounding box values of the group.
-var parts = {
-
-    IC8pin:function () {
-    this.manufactuerer = "";
-    this.name = "";
-    this.part_num =
-    this.total_pins = 8;
-    this.datasheet = "";
-    this.pins= {
-        pin1:
-        {num:1,name: "Vcc",x:10,y:5},
-        
-        
-        };  //end of pins
-
-
-
-        };  //end of pins
-
 
  this.outer = s.path("M0 0 h160 v100 h-160 Z").attr({fill: "none", strokeWidth: 1});
  this.rec = s.rect(30,0,100,100).attr({fill:"yellow",stroke:"black"});
  this.ICname = s.text(65, 50, "555").attr({"font-size":12});
-
-
 
 this.text1 = s.text(32, 12, "1").attr({"font-size":12});
 this.text2 = s.text(32, 38, "2").attr({"font-size":12});
@@ -81,8 +53,6 @@ this.grp = s.group(this.outer,this.rec,this.ICname,
              this.pin1, this.pin2, this.pin3, this.pin4, this.pin5, this.pin6, this.pin7, this.pin8,
              this.line1,this.line2, this.line3, this.line4, this.line5,this.line6,this.line7, this.line8);
 
-this.line1,this.line2, this.line3, this.line4, this.line5,this.line6,this.line7, this.line8);
-
 this.grp.drag(this.drag_move,this.drag_start,this.drag_stop);
 this.grp.click(this.exe_command);
 
@@ -98,31 +68,31 @@ this.grp.click(this.exe_command);
       console.log("finished dragging");
       this.box=this.getBBox();
       console.log(this.box)
-}
-    remove(){
-        this.remove();
     }
+
     exe_command(){
-        if (command= 'rem'){
-            this.remove();}
-        else if(command='rotate'){
-     this.transform(this.g.transform()+'r90');
+        if (command== 'rem'){
+            this.remove();
+            command = ' ';
+        }
+        else if(command=='rotate'){
+     this.transform(this.transform()+'r90');
+        command = ' ';
+
         }
     }
+
 }//end of class IC
 
-             this.line1,this.line2, this.line3, this.line4, this.line5,this.line6,this.line7, this.line8);
 
-         },
-Resistor: function(){
+class Resistor{
+    constructor(){
     this.manufactuerer = "";
     this.name = "";
     this.part_num = 
     this.total_pins = 8;
     this.datasheet = "";
     this.pins= {pin1:{num:1,name: "Vcc"}};
-    
-
     this.part_num =
     this.total_pins = 8;
     this.datasheet = "";
@@ -139,14 +109,7 @@ this.line1 = s.path("M10 9 h20").attr({stroke: "black",strokeWidth: 1});
 this.line2 = s.path("M90 9 h20").attr({stroke: "black",strokeWidth:1});
 this.grp = s.group(this.outer,this.rec,this.ICname, this.pin1, this.pin2,this.line1,this.line2);
              
+         }
          } //end of resistor
-};
-             
-             
-             
-
-
-         } //end of resistor
-};
 
 

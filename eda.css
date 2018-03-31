@@ -1,7 +1,5 @@
-
-@CHARSET "UTF-8";
 .block{
-       display:inline-block;
+    display:inline-block;
 	border:solid 1px;
 	border-color: black;
 	float:left;
@@ -11,29 +9,5 @@
 #sidebar{
 width: 200px;
 height: 1500px;
-	float:left;
-}
-
-
-.cp{
-  width: 10px;
-    height: 10px;
-    stroke:white;
-  stroke-width: 1px;
-	fill:none;
-}
-
-.pin{
-  stroke:black; 
-  fill:black;
-  stroke:black;
-  fill:black;
-  stroke:black;
-  fill:black;
-  stroke-width: 2px;
-}
-
-.cp{
-	  fill: blue;
-
+float:left;
 }
